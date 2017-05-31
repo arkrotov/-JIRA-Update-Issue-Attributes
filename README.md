@@ -1,7 +1,12 @@
-1. Открываем консоль (нужна админка)
+# 1. Открываем консоль (нужна админка)
+--------------------------------------
+```sh
 http://jira.eldorado.ru/plugins/servlet/scriptrunner/console?section=script_console
+```
 
-2. Вставляем следующий код.
+# 2. Вставляем следующий код.
+---------------------------
+```sh
 import com.atlassian.jira.component.ComponentAccessor;
 import com.atlassian.jira.issue.MutableIssue;
 import java.sql.Timestamp;
@@ -13,6 +18,7 @@ issuee.setEstimate((long) 8*60*60); // Осталось
 issuee.setCreated(new Timestamp(2017,5,26,8,0,0,0)); // Дата создания (год/месяц/день/часы/минуты/секунды/наносекунды)
 ComponentAccessor.getChangeHistoryManager().removeAllChangeItems(issuee); // Удалить историю
 issuee.store(); // Применить изменения
+```
 
-3. Изменяем, что нужно и жмем run.
-4. Solved!
+# 3. Изменяем, что нужно и жмем run.
+# 4. Solved!
