@@ -17,8 +17,8 @@ issuee.setTimeSpent((long) 24*60*60); // Затрачено
 issuee.setEstimate((long) 8*60*60); // Осталось
 issuee.setCreated(new Timestamp(117,5,26,8,0,0,0)); // Дата создания (год - 1900/месяц/день/часы/минуты/секунды/наносекунды)
 issuee.setUpdated(new Timestamp(117,5,26,8,0,0,0)); // Дата обновления (год - 1900/месяц/день/часы/минуты/секунды/наносекунды)
-issuee.setAssignee("akrotov"); // Устанавливаем исполнителя
-issuee.setReporter("akrotov"); // Устанавливаем автора
+issuee.setAssignee(ComponentAccessor.getUserUtil().getUserByName("akrotov").getDirectoryUser()); // Устанавливаем исполнителя
+issuee.setReporter(ComponentAccessor.getUserUtil().getUserByName("akrotov").getDirectoryUser()); // Устанавливаем автора
 ComponentAccessor.getChangeHistoryManager().removeAllChangeItems(issuee); // Удалить историю
 issuee.store(); // Применить изменения
 ```
