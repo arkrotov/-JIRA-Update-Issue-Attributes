@@ -12,6 +12,7 @@ import com.atlassian.jira.issue.MutableIssue;
 import java.sql.Timestamp;
 
 MutableIssue issuee = ComponentAccessor.getIssueManager().getIssueByCurrentKey("Test-111"); // Номер задачи
+issue.setResolutionObject(getConstantsManager().getResolutionObject("1")); // Резолюция (возможно: null)
 issuee.setOriginalEstimate((long) (32*60*60)); // Оценка
 issuee.setTimeSpent((long) 24*60*60); // Затрачено
 issuee.setEstimate((long) 8*60*60); // Осталось
