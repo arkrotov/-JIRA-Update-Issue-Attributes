@@ -11,17 +11,17 @@ import com.atlassian.jira.component.ComponentAccessor;
 import com.atlassian.jira.issue.MutableIssue;
 import java.sql.Timestamp;
 
-MutableIssue issuee = ComponentAccessor.getIssueManager().getIssueByCurrentKey("Test-111"); // Номер задачи
+MutableIssue issue = ComponentAccessor.getIssueManager().getIssueByCurrentKey("Test-111"); // Номер задачи
 issue.setResolutionObject(getConstantsManager().getResolutionObject("1")); // Резолюция (возможно: null)
-issuee.setOriginalEstimate((long) (32*60*60)); // Оценка
-issuee.setTimeSpent((long) 24*60*60); // Затрачено
-issuee.setEstimate((long) 8*60*60); // Осталось
-issuee.setCreated(new Timestamp(117,5,26,8,0,0,0)); // Дата создания (год - 1900/месяц - 1/день/часы/минуты/секунды/наносекунды)
-issuee.setUpdated(new Timestamp(117,5,26,8,0,0,0)); // Дата обновления (год - 1900/месяц - 1/день/часы/минуты/секунды/наносекунды)
-issuee.setAssignee(ComponentAccessor.getUserUtil().getUserByName("akrotov").getDirectoryUser()); // Устанавливаем исполнителя
-issuee.setReporter(ComponentAccessor.getUserUtil().getUserByName("akrotov").getDirectoryUser()); // Устанавливаем автора
+issue.setOriginalEstimate((long) (32*60*60)); // Оценка
+issue.setTimeSpent((long) 24*60*60); // Затрачено
+issue.setEstimate((long) 8*60*60); // Осталось
+issue.setCreated(new Timestamp(117,5,26,8,0,0,0)); // Дата создания (год - 1900/месяц - 1/день/часы/минуты/секунды/наносекунды)
+issue.setUpdated(new Timestamp(117,5,26,8,0,0,0)); // Дата обновления (год - 1900/месяц - 1/день/часы/минуты/секунды/наносекунды)
+issue.setAssignee(ComponentAccessor.getUserUtil().getUserByName("akrotov").getDirectoryUser()); // Устанавливаем исполнителя
+issue.setReporter(ComponentAccessor.getUserUtil().getUserByName("akrotov").getDirectoryUser()); // Устанавливаем автора
 ComponentAccessor.getChangeHistoryManager().removeAllChangeItems(issuee); // Удалить историю
-issuee.store(); // Применить изменения
+issue.store(); // Применить изменения
 ```
 
 # 3. Изменяем, что нужно и жмем run. (действия которые вам не нужны, можно удалить)
